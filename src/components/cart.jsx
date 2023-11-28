@@ -19,7 +19,7 @@ export default function Cart() {
   return Reactdom.createPortal(
     <Modal className="cart" myRef={ref} onClose={ctx.closeDialog}>
       {selectedMeals.length === 0 ? (
-        <h3>You Cart Is Empty</h3>
+        <h3>Your Cart Is Empty</h3>
       ) : (
         <>
           <h2>Your Cart</h2>
