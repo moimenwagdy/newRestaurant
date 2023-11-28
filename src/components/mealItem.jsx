@@ -13,7 +13,7 @@ export default function MealItem() {
   return availbleMeals.map((meal) => {
     return (
       <ul id="meals" key={meal.id}>
-        <li className=" meal-item " >
+        <li className="meal-item">
           <img
             src={`https://restaurantt.onrender.com/${meal.image}`}
             alt="MealImage"
