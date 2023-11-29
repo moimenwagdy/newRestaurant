@@ -23,32 +23,30 @@ export default function Cart() {
       ) : (
         <>
           <h2>Your Cart</h2>
-          <ul>
+          <ul className="cart">
             {selectedMeals.map((meal) => {
               if (meal.count != 0)
                 return (
                   <li className="cart-item" key={meal.id}>
-                    <p>
+                    <div className="cart-item-mealname">
                       {meal.name} - {meal.count} * {convertNum(meal.price)}
-                    </p>
-                    <p className="cart-item-actions">
-                      <span className="mealCost">
-                        meal cost - {convertNum(meal.cost)}
-                      </span>
+                    </div>
+                    <div className="cart-item-actions">
+                      <span className="mealCost">{convertNum(meal.cost)}</span>
                       <button
                         onClick={() => {
                           onDecrease(meal.count, meal.id, meal.price);
                         }}>
                         -
                       </button>
-                      <span>{meal.count}</span>
+                      <span className="mealCount">{meal.count}</span>
                       <button
                         onClick={() => {
                           onIncrease(meal.count, meal.id, meal.price);
                         }}>
                         +
                       </button>
-                    </p>
+                    </div>
                   </li>
                 );
             })}
